@@ -1,0 +1,48 @@
+<!-- This is the sample of peripheral:derivedFrom functionality -->
+<device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
+  <name>Minimal SVD</name>
+  <version>0.1</version>
+  <description>This is syntetic example of minimal valid SVD file</description>
+  <addressUnitBits>8</addressUnitBits>
+  <width>32</width>
+  <peripherals>
+
+    <peripheral>
+      <name>Rodent</name>
+      <baseAddress>0x21360000</baseAddress>
+      <version>66</version>
+      <description>idk, something</description>
+      <groupName>Rodents</groupName>
+    </peripheral>
+
+    <peripheral derivedFrom="Rodent">
+      <name>good_bunny</name>
+      <!-- verison should be derrived -->
+      <!-- description should be derrived -->
+      <!-- groupName should be derrived -->
+      <prependToName>OnlyGoodBoysGotPhdPrefix</prependToName>
+      <baseAddress>0x21370000</baseAddress>
+    </peripheral>
+
+    <peripheral derivedFrom="Rodent">
+      <name>bad_bunny</name>
+      <!-- verison should be derrived -->
+      <!-- description should be overwritten -->
+      <description>Evil twin</description>
+      <!-- groupName should be derrived -->
+      <appendToName>BadBoyGotSuffix0</appendToName>
+      <baseAddress>0x21370000</baseAddress>
+    </peripheral>
+
+    <peripheral derivedFrom="Rodent">
+      <name>sth</name>
+      <!-- verison should be derrived -->
+      <!-- description should be overwritten -->
+      <!-- groupName should be derrived -->
+      <!-- Use alternative name for struct -->
+      <headerStructName>neutral_bunny</headerStructName>
+      <baseAddress>0x21370000</baseAddress>
+    </peripheral>
+  
+  </peripherals>
+</device>
