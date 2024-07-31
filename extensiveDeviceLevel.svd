@@ -1,0 +1,45 @@
+<!-- This is sample of SVD file that uses all possbile fields on the device level -->
+<device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd">
+  <vendor>E-Corp</vendor>
+  <vendorID>E</vendorID>
+  <name>Minimal SVD</name>
+  <series>seven11</series>
+  <version>0.1</version>
+  <description>This is syntetic example of valid SVD with extensive use of fields on device level</description>
+  <licenseText>
+    --------------------------------\n
+    | Do what you want with it man |\n
+    --------------------------------\n
+  </licenseText>
+
+  <!-- cpu element contains only requied child elements as it's not device level -->
+  <cpu>
+    <name>other</name>
+    <revision>18</revision>
+    <endian>selectable</endian>
+    <mpuPresent>false</mpuPresent>
+    <fpuPresent>false</fpuPresent>
+    <nvicPrioBits>12</nvicPrioBits>
+    <vendorSystickConfig>true</vendorSystickConfig>
+  </cpu>
+
+  <headerSystemFilename>need_to_investigate_this_one</headerSystemFilename>
+  <headerDefinitionsPrefix>jk_</headerDefinitionsPrefix>
+  <addressUnitBits>8</addressUnitBits>
+  <width>32</width>
+  <size>14</size>
+  <access>read-only</access>
+  <protection>s</protection>
+  <resetValue>0</resetValue>
+  <resetMask>0b001</resetMask>
+  
+  <peripherals>
+    <!-- peripheral element contains only requied child elements as it's not device level -->
+    <peripheral>
+        <name> Bunny </name>
+        <baseAddress>0x21370000</baseAddress>
+    </peripheral>
+  </peripherals>
+
+  <vendorExtensions>some random data</vendorExtensions>
+</device>
