@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<device schemaVersion="1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
+  <vendor>WCH Ltd.</vendor>                                       <!-- device vendor name -->
+  <vendorID>WCH</vendorID>                                        <!-- device vendor short name -->
+  <name>CH583SFR</name>                                        <!-- name of part-->
+  <series>CH58x</series>                                         <!-- device series the device belongs to -->
+  <version>1.0</version>                                          <!-- version of this description, adding CMSIS-SVD 1.1 tags -->
+  <description>WCH wireless MCU CH58x Family Support, Drivers</description>
+  <addressUnitBits>8</addressUnitBits>                            <!-- byte addressable memory -->
+  <width>32</width>                                               <!-- bus width is 32 bits -->
+  <!-- default settings implicitly inherited by subsequent sections -->
+  <size>32</size>                                                         <!-- this is the default size (number of bits) of all peripherals
+                                                                       and register that do not define "size" themselves -->
+  <resetValue>0x00000000</resetValue>                             <!-- by default all bits of the registers are initialized to 0 on reset -->
+  <resetMask>0xFFFFFFFF</resetMask>  
+
+  <peripherals>
+
+    <peripheral>
+      <name>TMR0</name>
+      <description>Timer0 register</description>
+      <groupName>TMR</groupName>
+      <baseAddress>0x40002000</baseAddress>
+      <addressBlock>
+        <offset>0x00</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <interrupt>
+        <name>TMR0</name>
+        <value>16</value>
+      </interrupt>
+      <registers>
+        <register>
+          <name>CTRL_MOD</name>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0x02</resetValue>
+        </register>
+        <register>
+          <name>INTER_EN</name>
+          <addressOffset>3</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0x02</resetValue>
+        </register>
+        <register>
+          <name>INT_FLAG</name>
+          <addressOffset>50</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0x02</resetValue>
+        </register>
+      </registers>
+    </peripheral>
+  
+    <!-- <peripheral derivedFrom ="TMR0">
+      <name>TMR1</name>
+      <baseAddress>0x40002400</baseAddress>
+      <interrupt>
+        <name>TMR1</name>
+        <value>24</value>
+      </interrupt>
+    </peripheral>
+
+    <peripheral>
+      <name>TMR1_DMA</name>
+      <baseAddress>0x40002400</baseAddress>
+      <addressBlock>
+        <offset>0x00</offset>
+        <size>0x400</size>
+        <usage>registers</usage>
+      </addressBlock>
+      <alternatePeripheral>TMR1</alternatePeripheral>
+      <registers>
+        <register>
+          <name>CTRL_MOD</name>
+          <addressOffset>0x00</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0x02</resetValue>
+        </register>
+
+      </registers>
+    </peripheral>
+
+    <peripheral derivedFrom ="TMR0">
+      <name>TMR2</name>
+      <baseAddress>0x40002800</baseAddress>
+      <interrupt>
+        <name>TMR2</name>
+        <value>25</value>
+      </interrupt>
+    </peripheral>
+
+    <peripheral derivedFrom ="TMR0">
+      <name>TMR3</name>
+      <baseAddress>0x40002C00</baseAddress>
+      <interrupt>
+        <name>TMR3</name>
+        <value>32</value>
+      </interrupt>
+    </peripheral> -->
+  
+  </peripherals>
+</device>
